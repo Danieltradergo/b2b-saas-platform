@@ -1,0 +1,19 @@
+{
+  "redirects": [
+    {
+      "source": "/dashboard",
+      "destination": "/(dashboard)/dashboard",
+      "permanent": false
+    },
+    {
+      "source": "/admin",
+      "destination": "/(dashboard)/admin",
+      "permanent": false
+    },
+    {
+      "source": "/settings",
+      "destination": "/(dashboard)/settings",
+      "permanent": false
+    }
+  ]
+}
