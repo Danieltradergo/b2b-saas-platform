@@ -1,63 +1,146 @@
-import React from 'react';
+'use client';
 
 export default function Home() {
+  const plans = [
+    {
+      name: 'Startup',
+      price: 'R$ 99',
+      period: '/mês',
+      description: 'Perfeito para pequenas empresas',
+      features: [
+        'Até 5 usuários',
+        'Até 1.000 registros',
+        'Suporte por email',
+        'Relatórios básicos',
+        'API limitada'
+      ]
+    },
+    {
+      name: 'Professional',
+      price: 'R$ 299',
+      period: '/mês',
+      description: 'Para empresas em crescimento',
+      features: [
+        'Até 50 usuários',
+        'Até 100.000 registros',
+        'Suporte prioritário',
+        'Relatórios avançados',
+        'API completa',
+        'Integrações',
+        'Dashboard customizável'
+      ],
+      popular: true
+    },
+    {
+      name: 'Enterprise',
+      price: 'Sob consulta',
+      period: '',
+      description: 'Para grandes corporações',
+      features: [
+        'Usuários ilimitados',
+        'Armazenamento ilimitado',
+        'Suporte 24/7',
+        'Relatórios customizados',
+        'API premium',
+        'Integrações avançadas',
+        'SSO e 2FA',
+        'Suporte dedicado'
+      ]
+    }
+  ];
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
       {/* Navigation */}
-      <nav className="bg-white shadow-md">
-        <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-blue-600">B2B SaaS Platform</h1>
-          <div className="space-x-4">
-            <a href="/auth" className="text-gray-700 hover:text-blue-600">Login</a>
-            <a href="/pricing" className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Get Started</a>
+      <nav className="border-b border-slate-700 bg-slate-900/50 backdrop-blur">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+          <div className="text-2xl font-bold text-blue-500">B2B SaaS Platform</div>
+          <div className="flex gap-4">
+            <button className="px-4 py-2 text-slate-100 hover:text-blue-400 transition">Login</button>
+            <button className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition">Get Started</button>
           </div>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section className="max-w-6xl mx-auto px-4 py-20 text-center">
-        <h2 className="text-5xl font-bold text-gray-900 mb-6">Solucao B2B Para Sua Empresa</h2>
-        <p className="text-xl text-gray-700 mb-8">Plataforma completa de gerenciamento para empresas brasileiras</p>
-        <a href="/pricing" className="bg-green-500 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-green-600 inline-block">Comece Agora - Gratis</a>
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
+        <h1 className="text-5xl sm:text-6xl font-bold text-white mb-6">Solução B2B Para Sua Empresa</h1>
+        <p className="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">Plataforma completa de gerenciamento para empresas brasileiras. Gerencie clientes, vendas e operações em um único lugar.</p>
+        <button className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white text-lg rounded-lg transition">Começar Agora - Grátis</button>
       </section>
 
-      {/* Features */}
-      <section className="bg-white py-16">
-        <div className="max-w-6xl mx-auto px-4">
-          <h3 className="text-3xl font-bold text-center mb-12">Recursos Principais</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="p-6 border border-gray-200 rounded-lg text-center">
-              <div className="text-4xl mb-4">🔐</div>
-              <h4 className="text-xl font-bold mb-2">Autenticacao Segura</h4>
-              <p className="text-gray-600">Login seguro com Supabase</p>
-            </div>
-            <div className="p-6 border border-gray-200 rounded-lg text-center">
-              <div className="text-4xl mb-4">📊</div>
-              <h4 className="text-xl font-bold mb-2">Dashboard Inteligente</h4>
-              <p className="text-gray-600">Analise seus dados em tempo real</p>
-            </div>
-            <div className="p-6 border border-gray-200 rounded-lg text-center">
-              <div className="text-4xl mb-4">⚙️</div>
-              <h4 className="text-xl font-bold mb-2">Gerenciamento Completo</h4>
-              <p className="text-gray-600">Controle total do seu negocio</p>
-            </div>
+      {/* Features Section */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 bg-slate-800/30">
+        <h2 className="text-3xl font-bold text-white mb-12 text-center">Recursos Principais</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="p-6 border border-slate-700 rounded-lg hover:border-slate-500 transition">
+            <h3 className="text-xl font-bold mb-2">Autenticacao Segura</h3>
+            <p className="text-slate-300">Login seguro com Supabase</p>
+          </div>
+          <div className="p-6 border border-slate-700 rounded-lg hover:border-slate-500 transition">
+            <h3 className="text-xl font-bold mb-2">Dashboard Intuitivo</h3>
+            <p className="text-slate-300">Interface amigável e responsiva</p>
+          </div>
+          <div className="p-6 border border-slate-700 rounded-lg hover:border-slate-500 transition">
+            <h3 className="text-xl font-bold mb-2">Relatórios Avançados</h3>
+            <p className="text-slate-300">Análise completa de seus dados</p>
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-blue-600 text-white py-16">
-        <div className="max-w-2xl mx-auto text-center">
-          <h3 className="text-3xl font-bold mb-4">Pronto para Transformar Seu Negocio?</h3>
-          <p className="mb-8 text-lg">Comece a usar nosso B2B SaaS hoje mesmo. 100% gratis no primeiro mes!</p>
-          <a href="/auth" className="bg-white text-blue-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 inline-block">Registre-se Agora</a>
+      {/* Pricing Section */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <h2 className="text-3xl font-bold text-white mb-12 text-center">Planos de Preços</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {plans.map((plan, index) => (
+            <div
+              key={index}
+              className={`rounded-lg border-2 p-8 transition transform hover:scale-105 ${
+                plan.popular
+                  ? 'border-blue-500 bg-slate-800 shadow-2xl'
+                  : 'border-slate-700 bg-slate-800/50 hover:border-slate-500'
+              }`}
+            >
+              {plan.popular && (
+                <div className="mb-4 inline-block px-3 py-1 bg-blue-600 text-white text-sm rounded-full">Popular</div>
+              )}
+              <h3 className="text-2xl font-bold text-white mb-2">{plan.name}</h3>
+              <p className="text-slate-400 mb-4">{plan.description}</p>
+              <div className="mb-6">
+                <span className="text-4xl font-bold text-white">{plan.price}</span>
+                <span className="text-slate-400">{plan.period}</span>
+              </div>
+              <button className={`w-full py-2 rounded-lg font-semibold transition mb-6 ${
+                plan.popular
+                  ? 'bg-blue-600 hover:bg-blue-700 text-white'
+                  : 'bg-slate-700 hover:bg-slate-600 text-white'
+              }`}>
+                Escolher Plano
+              </button>
+              <ul className="space-y-3">
+                {plan.features.map((feature, idx) => (
+                  <li key={idx} className="text-slate-300 flex items-start">
+                    <span className="text-green-500 mr-3">✓</span>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       </section>
 
+      {/* CTA Section */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
+        <h2 className="text-3xl font-bold text-white mb-4">Pronto para começar?</h2>
+        <p className="text-xl text-slate-300 mb-8">Junte-se a centenas de empresas que já usam nossa plataforma</p>
+        <button className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white text-lg rounded-lg transition">Criar Conta Grátis</button>
+      </section>
+
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-8">
-        <div className="max-w-6xl mx-auto px-4 text-center">
-          <p>© 2025 B2B SaaS Platform. Todos os direitos reservados.</p>
+      <footer className="border-t border-slate-700 bg-slate-900/50 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-slate-400">
+          <p>&copy; 2024 B2B SaaS Platform. Todos os direitos reservados.</p>
         </div>
       </footer>
     </div>
